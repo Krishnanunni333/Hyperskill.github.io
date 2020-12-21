@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Langar&display=swap');
+body {
+    padding: 10px;
+    background-image: url("https://fvmstatic.s3.amazonaws.com/maps/m/WRLD-EPS-01-0005.png");
+    background-size: cover;
+}
+h1 {
+    text-align:center;
+    color: cadetblue;
+    font-family: 'Langar', cursive;
+}
+p {
+    font-size: 20px;
+    font-weight: bold;
+    font-family: 'Langar', cursive;
+
+}
+
+.flex-container{
+    align-content: center;
+    flex-wrap: wrap;
+    padding-left: 20%;
+    display: grid;
+    overflow: hidden;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 1fr;
+    max-width: 1000px;
+}
+
+
+
+.flex-item{
+    align-content: center;
+    display: flex;
+    padding: 0.5em;
+    width: 150px;
+    height: 150px;
+    font-family: 'Open Sans', 'monospace';
+}
+.card{
+    height: 100%;
+    width: 100%;
+    position: relative;
+    transition: all 1s linear;
+    transform-style: preserve-3d;
+}
+
+.front,
+.back{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    font-size: 4em;
+    font-family: 'Lobster', cursive;
+    border-radius: 5px;
+    position: absolute;
+}
+
+.front{
+    align-content: center;
+    background: ivory;
+    color: darkorange;
+    z-index: 2;
+    backface-visibility: hidden;
+}
+
+.back{
+    align-content: center;
+    background: darkorange;
+    color:ivory;
+    z-index: 1;
+    transform: rotateY(180deg);
+}
+
+.container:hover .card{
+    transform: rotateY(180deg);
+}
+
+.container{
+    perspective: 1000px;
+}
